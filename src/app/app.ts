@@ -4,7 +4,7 @@ import { musicGlossary } from '../models/File_01';
 @Component({
   imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './styles.css',
+  styleUrl: './app.css',
   templateUrl: './app.html',
 })
 export class App {
