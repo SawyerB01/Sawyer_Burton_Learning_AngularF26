@@ -2,14 +2,16 @@
 <p>This site displays a collection of songs / albums I've listened to over the course of the month.</p>
 
 @for (item of music; track item.id) {
-  <div>
+  <div class = music-card>
     <h2>{{ item.name }}</h2>
     <p>Category: {{ item.category }}</p>
     <p>Year: {{ item.year }}</p>
     <p>Release: {{ item.dateReleased }}</p>
 
     @if (item.description) {
+        <div class = "description-box">
       <p>Description: {{ item.description }}</p>
+      </div>
     }
 
     @switch (item.category) {
