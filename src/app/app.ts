@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import{ musicGlossary } from './models/Interface'
-
+import { musicGlossary } from '../models/File_01';
 @Component({
   imports: [RouterOutlet],
   selector: 'app-root',
@@ -9,9 +8,6 @@ import{ musicGlossary } from './models/Interface'
   templateUrl: './app.html',
 })
 export class App {
-
-    protected readonly title = signal('Music-Profile');
-
     music: musicGlossary[] = [
         {
             id: 1,
@@ -21,5 +17,4 @@ export class App {
             dateReleased: "2020-12-24"
         }
     ];
-
 }
