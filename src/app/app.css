@@ -1,0 +1,14 @@
+.music-card {
+background-color: #e0e0e0;
+border: 1px solid #c5c5c5;
+border-radius: 8px;
+padding: 15px;
+margin: 15px 0;
+}
+
+.description {
+    background-color: #c8c8c8;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 6px;
+}
