@@ -1,2 +1,38 @@
-<h1> Good morning good evening and goodnight</h1>
-<h2>This is Sawyer, rockin and rollin.</h2>
+<h1>Welcome to my Music Library</h1>\
+<p>This site displays a collection of songs 
+    / albums I've listened to over the course of the month.</p>
+
+@for (item of music; track item.id) {
+<div>
+    <h2>{{item.name}}</h2>
+    <p>Category: {{item.Category}}</p>
+    <p> Year: {{item.Year}}</p>
+    <p>Release: {{item.dateReleased}}</p>
+
+@if (item.description) {
+    <p>Description:{{ item.description }}</p>
+}
+
+@switch (item.category) {
+    @case ("metal) {
+        <span>Metal</span>
+    }
+    @case ("Jazz") {
+        <span>Jazz</span>
+    }
+    @case ("rock") {
+        <span>Rock</span>
+    }
+    @case ("Pop") {
+        <span>Pop</span>
+    }
+    @default {
+        <span>Unknown category</span>
+    }
+} 
+</div>
+ }   @empty{
+    <p>No music enteries found currently. Sorry!</p>
+}
+
+<div id ="sentenial value"></div>
