@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { musicGlossary } from '../../models/File_01';
 import { MusicListItem } from '../music-list-item/music-list-item';
+import { ContentEvent } from '../music-list-item/music-list-item';
 
 @Component({
   imports: [MusicListItem],
@@ -56,4 +57,7 @@ export class MusicList {
           description: "This album uses it's classic sad trope mixed with guitar and that effortless feeling of heaviness from their music. Another personal favourite, but also comes at the same cost."
         }
 ]
+handleItemClick(event: ContentEvent) {
+  console.log(event);
+}
 }
