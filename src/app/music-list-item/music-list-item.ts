@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { MusicList } from '../music-list/music-list';
+import { musicGlossary } from '../../models/File_01';
 
 @Component({
   imports: [],
@@ -6,4 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './music-list-item.css',
   templateUrl: './music-list-item.html',
 })
-export class MusicListItem {}
+export class MusicListItem {
+  item = input.required<musicGlossary>();
+}

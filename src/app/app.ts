@@ -36,7 +36,7 @@ export class App {
           name: "Headlock",
           category: "pop",
           year: 2005,
-          dateReleased: "2005-06-21"
+          dateReleased: "2005-07-18"
         },
         {
           id: 5,
