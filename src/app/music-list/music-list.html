@@ -1,6 +1,10 @@
 @for (item of music; track item.id) {
   <app-music-list-item
     [item]="item"
+    [class.even]="$even"
+    [class.odd]="$odd"
+    [class.first]="$first"
+    [class.last]="$last"
     (itemClicked)="handleItemClick($event)">
   </app-music-list-item>
 } @empty {

@@ -1,0 +1,16 @@
+.even {
+    background-color: #f0f0f0;
+}
+
+.odd {
+    background-color: #ffffff;
+}
+
+.first {
+    border-left: 5px solid #4caf50;
+}
+
+.last {
+    border-bottom: 3px solid #2196f3;
+    margin-bottom: 0;
+}

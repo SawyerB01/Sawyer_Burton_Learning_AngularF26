@@ -1,4 +1,9 @@
 <div (click)="onItemClick()" style="cursor: pointer;">
+<img [src]="item().img" 
+     alt="{{ item().name }} cover" 
+     width="120"
+     style="margin-bottom: 0.5rem; border-radius: 4px;">
+     
 <h2>{{ item().name }}</h2>
 <p>Year: {{ item().year }}</p>
 <p>Category: {{ item().category }}</p>

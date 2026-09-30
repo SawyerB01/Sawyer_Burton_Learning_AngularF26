@@ -5,6 +5,7 @@ export interface musicGlossary {
     year: number;
     description?: string;
     dateReleased: string;
+    img: string;
 }
 interface wrapper<K>{
     value: K;
