@@ -58,6 +58,7 @@ export class MusicList {
         }
 ]
 handleItemClick(event: ContentEvent) {
-  console.log(event);
+  console.log('Clicked item:', event);
 }
 }
+

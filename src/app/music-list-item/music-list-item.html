@@ -2,7 +2,7 @@
 <p>Year: {{ item().year }}</p>
 <p>Category: {{ item().category }}</p>
 <p>Released: {{ item().dateReleased }}</p>
-<footer>Today's date here</footer>
+<footer>Current date: September 30th, 2026.</footer>
 
 @if (item().description) {
   <p>Description: {{ item().description }}</p>
@@ -32,3 +32,6 @@
     }
 
 }
+<div (click)="onitemClick()">
+<h2 (click)="onItemClick()">{{ item().name }}</h2>
+</div>

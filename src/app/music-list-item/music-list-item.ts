@@ -19,10 +19,10 @@ export class MusicListItem {
 
  itemClicked = output<ContentEvent>();
 
- onitemClick() {
+onItemClick() {
   this.itemClicked.emit({
     id: this.item().id,
     action: 'opened'
   });
- }
+}
 }
