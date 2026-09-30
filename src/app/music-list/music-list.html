@@ -1,1 +1,10 @@
-<p>music-list works!</p>
+@for (item of music; track item.id) {
+    <<app-music-list-item 
+    [item]="item"
+    (itemClicked)="handleItemClick($event">
+</app-music-list-item> 
+} @empty {
+    <p>No music entries found.</p>
+}
+
+<div id="Dot-Matrix-value"></div>
