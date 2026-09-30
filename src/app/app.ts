@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { musicGlossary } from '../models/File_01';
+import { MusicList } from './music-list/music-list';
 @Component({
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MusicList],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

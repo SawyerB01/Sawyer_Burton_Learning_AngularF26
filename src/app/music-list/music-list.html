@@ -1,5 +1,5 @@
 @for (item of music; track item.id) {
-    <<app-music-list-item 
+    <app-music-list-item 
     [item]="item"
     (itemClicked)="handleItemClick($even)"
 </app-music-list-item> 
