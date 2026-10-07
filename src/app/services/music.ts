@@ -71,4 +71,16 @@ constructor() {
         console.log('Current number of songs:', this._music().length);
     });
 }
+
+removeMusic(id: number) {
+    this._music.update(list=>list.filter(item => item.id !== id));
+}
+readonly musicWithDescription = computed(() =>
+this._music().filter(item => !!item.description)
+);
+
+readonly desccriptionCount = computed(() =>
+this.musicWithDesciption().length
+);
+readonly hasMusic = computed(() => this._music().length >0);
 }

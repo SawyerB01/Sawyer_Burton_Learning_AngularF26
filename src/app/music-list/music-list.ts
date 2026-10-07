@@ -10,11 +10,11 @@ import { Music } from '../services/music';
   
 })
 export class MusicList{
-  private musicService = inject(Music);
+  readonly musicService = inject(Music);
 
-handleItemClick(event: ContentEvent) {
-  console.log('Clicked item:', event);
-}
+handleItemClick(event: ContentEvent){{
+  this.musicService.removeMusic(event.id);
+}}
 }
 
 

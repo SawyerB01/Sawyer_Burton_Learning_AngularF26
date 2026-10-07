@@ -1,7 +1,8 @@
-@for (item of music; track item.id) {
+@for (item of musicService.music(); track item.id) {
   <app-music-list-item
   [item]="item"
-  (itemClicked)="handleItemClick"($event)>
+  (itemClicked)="handleItemClick($event)">
+
   </app-music-list-item>
 } @empty {
   <p>No music entries found.</p>
