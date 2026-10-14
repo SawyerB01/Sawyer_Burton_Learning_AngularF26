@@ -1,8 +1,8 @@
-import { Service, signal, computed, effect, inject } from '@angular/core';
 import { musicGlossary } from '../../models/File_01';
 import { APP_CONFIG } from '../../models/app-config';
+import { Injectable, signal, computed, effect, inject } from '@angular/core';
 
-@Service()
+@Injectable({ providedIn: 'root' })
 export class Music {
     private readonly _music = signal<musicGlossary[]>([
         {
