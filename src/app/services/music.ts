@@ -1,5 +1,6 @@
-import { Service, signal, computed, effect } from '@angular/core';
+import { Service, signal, computed, effect, inject } from '@angular/core';
 import { musicGlossary } from '../../models/File_01';
+import { APP_CONFIG } from '../../models/app-config';
 
 @Service()
 export class Music {
@@ -62,7 +63,7 @@ export class Music {
         this._music.update(list=> [...list, newItem]);
     }
 
-    readonly musicWithDesciption = computed(() =>
+    readonly musicWithDescription = computed(() =>
     this._music().filter(item => !!item.description)
 );
 
@@ -75,12 +76,12 @@ constructor() {
 removeMusic(id: number) {
     this._music.update(list=>list.filter(item => item.id !== id));
 }
-readonly musicWithDescription = computed(() =>
-this._music().filter(item => !!item.description)
-);
 
-readonly desccriptionCount = computed(() =>
-this.musicWithDesciption().length
+readonly descriptionCount = computed(() =>
+this.musicWithDescription().length
 );
 readonly hasMusic = computed(() => this._music().length >0);
+
+private config = inject(APP_CONFIG);
+readonly apiBaseUrl = this.config.apiBaseUrl;
 }
