@@ -1,13 +1,15 @@
 import { Component, input, output } from '@angular/core';
 import { MusicList } from '../music-list/music-list';
 import { musicGlossary } from '../../models/File_01';
+import { RouterLink } from '@angular/router';
+
 export interface ContentEvent {
   id: number;
   action: 'opened' | 'favourited';
 }
 
 @Component({
-  imports: [],
+  imports: [RouterLink],
   selector: 'app-music-list-item',
   styleUrl: './music-list-item.css',
   templateUrl: './music-list-item.html',

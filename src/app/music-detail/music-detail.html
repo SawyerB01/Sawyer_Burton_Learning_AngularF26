@@ -1,0 +1,10 @@
+<p>Raw id from route: {{ id() }}</p>
+
+@if (item()) {
+  <h1>{{ item()!.name }}</h1>
+  <p>Year: {{ item()!.year }}</p>
+  <p>Category: {{ item()!.category }}</p>
+  <img [src]="item()!.img" width="200">
+} @else {
+  <p style="color: red;">Item is undefined – lookup failed</p>
+}

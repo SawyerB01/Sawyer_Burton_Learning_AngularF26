@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { APP_CONFIG } from '../models/app-config';
@@ -10,7 +10,7 @@ import { Music } from './services/music';
 export const appConfig: ApplicationConfig = {
 providers: [
   provideBrowserGlobalErrorListeners(),
-  provideRouter(routes),
+  provideRouter(routes, withComponentInputBinding()),
   provideHttpClient(),
 
   {
@@ -24,5 +24,6 @@ providers: [
   // the swap
   { provide: Music, useClass: MockMusic }
 ]
+
 };
 
