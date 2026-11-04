@@ -1,11 +1,12 @@
 import { Component, inject, input, computed } from '@angular/core';
 import { Music } from '../services/music'
 import { effect } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-music-detail',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './music-detail.html',
   styleUrl: './music-detail.css'
 })

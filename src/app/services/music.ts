@@ -62,6 +62,16 @@ export class Music {
     addMusic(newItem: musicGlossary) {
         this._music.update(list=> [...list, newItem]);
     }
+    testUpdate() {
+      console.log('updateMusic works');
+    }
+updateMusic(updatedItem: musicGlossary) {
+  this._music.update(list => {
+    return list.map(item =>
+      item.id === updatedItem.id ? updatedItem : item
+    );
+  });
+}
 
     readonly musicWithDescription = computed(() =>
     this._music().filter(item => !!item.description)
@@ -70,6 +80,7 @@ export class Music {
 constructor() {
     effect(() => {
         console.log('Current number of songs:', this._music().length);
+        console.log('Music service created', this);
     });
 }
 
@@ -84,4 +95,5 @@ readonly hasMusic = computed(() => this._music().length >0);
 
 private config = inject(APP_CONFIG);
 readonly apiBaseUrl = this.config.apiBaseUrl;
+
 }

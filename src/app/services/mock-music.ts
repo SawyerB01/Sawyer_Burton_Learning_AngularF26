@@ -17,7 +17,6 @@ export class MockMusic {
 
   readonly music = this._music.asReadonly();
 
-  // You can leave the methods empty or just log something
   addMusic(item: musicGlossary) {
     console.log('Mock addMusic called', item);
   }
