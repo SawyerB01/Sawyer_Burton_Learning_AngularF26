@@ -1,0 +1,57 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label>Name</label>
+    <input formControlName="name">
+    @if (form.get('name')?.touched && form.get('name')?.hasError('required')) {
+      <div>Name is required</div>
+    }
+    @if (form.get('name')?.touched && form.get('name')?.hasError('minlength')) {
+      <div>Name must be at least 2 characters</div>
+    }
+  </div>
+
+  <div>
+    <label>Category</label>
+    <select formControlName="category">
+      <option value="pop">pop</option>
+      <option value="rock">rock</option>
+      <option value="metal">metal</option>
+      <option value="jazz">jazz</option>
+    </select>
+    @if (form.get('category')?.touched && form.get('category')?.hasError('required')) {
+      <div>Category is required</div>
+    }
+  </div>
+
+  <div>
+    <label>Year</label>
+    <input type="number" formControlName="year">
+    @if (form.get('year')?.touched && form.get('year')?.hasError('required')) {
+      <div>Year is required</div>
+    }
+    @if (form.get('year')?.touched && form.get('year')?.hasError('min')) {
+      <div>Year must be 1900 or later</div>
+    }
+  </div>
+
+  <div>
+    <label>Date Released</label>
+    <input type="date" formControlName="dateReleased">
+    @if (form.get('dateReleased')?.touched && form.get('dateReleased')?.hasError('required')) {
+      <div>Date is required</div>
+    }
+  </div>
+
+  <div>
+    <label>Description</label>
+    <textarea formControlName="description"></textarea>
+  </div>
+
+  <div>
+    <label>Image URL</label>
+    <input formControlName="img">
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Add Music</button>
+</form>

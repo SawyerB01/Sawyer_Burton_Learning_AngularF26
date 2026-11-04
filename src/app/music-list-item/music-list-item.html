@@ -1,5 +1,5 @@
 
-<div>
+<div (click)="onItemClick()" style="cursor: pointer;">
 <img [src]="item().img" 
      alt="{{ item().name }} cover" 
      width="120"
@@ -16,7 +16,7 @@
 } @else {
   <p>This item has no description.</p>
 }
-<a [routerLink]="['/music', item().id]">View Details</a>
+
 @switch (item().category) {
     @case ("metal") {
         <span>metal</span>
@@ -39,5 +39,5 @@
     }
 
 }
-    
+<a [routerLink]="['/music', item().id]"> View Details</a>    
 </div>
