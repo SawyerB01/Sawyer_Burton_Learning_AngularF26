@@ -3,11 +3,15 @@
   <div>
     <label>Name</label>
     <input formControlName="name">
+
     @if (form.get('name')?.touched && form.get('name')?.hasError('required')) {
       <div>Name is required</div>
     }
     @if (form.get('name')?.touched && form.get('name')?.hasError('minlength')) {
       <div>Name must be at least 2 characters</div>
+    }
+    @if (form.get ('name')?.touched && form.get('name')?.hasError('whitespace')) {
+      <div>Name cannot be only spaces</div>
     }
   </div>
 
@@ -49,6 +53,11 @@
     <label>Image URL</label>
     <input formControlName="img">
   </div>
+
+  @if (form.touched && form.hasError('futureYear')) {
+    <div>Year cannot be int he future.</div>
+  }
+
 
   <button type="submit" [disabled]="form.invalid"> {{ id() ? 'Save Changes' : 'Add Music' }} </button>
 </form>

@@ -1,10 +1,15 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MusicList } from './music-list/music-list';
+import { EditGuardService } from './services/edit-guard';
+import { editGuard } from './services/edit.guard';
+
 @Component({
   imports: [RouterOutlet, MusicList],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
-export class App {}
+export class App {
+  guardService = inject(EditGuardService);
+}
