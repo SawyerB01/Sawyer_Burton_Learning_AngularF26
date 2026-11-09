@@ -1,7 +1,5 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-  <h2>{{ isEditMode ? 'Edit Music' : 'Add Music' }}</h2>
-
   <div>
     <label>Name</label>
     <input formControlName="name">
@@ -21,9 +19,6 @@
       <option value="metal">metal</option>
       <option value="jazz">jazz</option>
     </select>
-    @if (form.get('category')?.touched && form.get('category')?.hasError('required')) {
-      <div>Category is required</div>
-    }
   </div>
 
   <div>
@@ -55,9 +50,5 @@
     <input formControlName="img">
   </div>
 
-  <button type="submit" [disabled]="form.invalid">
-    {{ isEditMode ? 'Save Changes' : 'Add Music' }}
-  </button>
-
+  <button type="submit" [disabled]="form.invalid"> {{ id() ? 'Save Changes' : 'Add Music' }} </button>
 </form>
-<a>aaa</a>

@@ -65,13 +65,6 @@ export class Music {
     testUpdate() {
       console.log('updateMusic works');
     }
-updateMusic(updatedItem: musicGlossary) {
-  this._music.update(list => {
-    return list.map(item =>
-      item.id === updatedItem.id ? updatedItem : item
-    );
-  });
-}
 
     readonly musicWithDescription = computed(() =>
     this._music().filter(item => !!item.description)
@@ -86,6 +79,11 @@ constructor() {
 
 removeMusic(id: number) {
     this._music.update(list=>list.filter(item => item.id !== id));
+}
+updateMusic(item: musicGlossary) {
+  this._music.update(list =>
+    list.map(m => m.id === item.id ? item : m)
+  );
 }
 
 readonly descriptionCount = computed(() =>

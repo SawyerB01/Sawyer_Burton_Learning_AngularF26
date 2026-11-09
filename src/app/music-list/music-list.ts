@@ -11,7 +11,7 @@ import { APP_CONFIG } from '../../models/app-config';
   
 })
 export class MusicList{
-  readonly musicService = inject(Music);
+  musicService = inject(Music);
   private config = inject(APP_CONFIG);
   
 readonly apiBaseUrl = this.config.apiBaseUrl;

@@ -16,7 +16,7 @@ export class MusicForm implements OnInit {
   private musicService = inject(Music);
   private router = inject(Router);
 
-  id = input<string>();
+  id = input<string | undefined>();
 
   form = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2)]],

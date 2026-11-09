@@ -18,10 +18,15 @@ export class MockMusic {
   readonly music = this._music.asReadonly();
 
   addMusic(item: musicGlossary) {
-    console.log('Mock addMusic called', item);
+    this._music.update(list => [... list, item]);
   }
 
   removeMusic(id: number) {
-    console.log('Mock removeMusic called', id);
+    this._music.update(list => list.filter(m => m.id !== id));
   }
+  updateMusic(item: musicGlossary) {
+  this._music.update(list =>
+    list.map(m => m.id === item.id ? item : m)
+  );
+}
 }
