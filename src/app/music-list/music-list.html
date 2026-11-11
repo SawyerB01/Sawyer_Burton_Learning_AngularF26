@@ -1,11 +1,16 @@
-@for (item of musicService.music(); track item.id) {
+<div id="Dot-Matrix-value"></div>
+
+<P> class="data-source"
+  Data source (https://de1.api.radio-browser.info): {{musicService.apiBaseUrl }}
+</P>
+@if (musicService.isLoading()) {
+  <p>Loading Stations...</p>
+} @else if (musicService.error()) {
+  <p class="error"> {{ musicService.error() }}</p>
+} @else {
+  @for (item of musicService.music(); track item.id) {
   <app-music-list-item [item]="item" />
 }@empty {
   <p>No music entries found.</p>
 }
-
-<div id="Dot-Matrix-value"></div>
-
-<P> class="data-source"
-  Data source (placeholder): {{musicService.apiBaseUrl }}
-</P>
+}

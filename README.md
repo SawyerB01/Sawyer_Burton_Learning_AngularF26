@@ -64,3 +64,5 @@ For more information on using the Angular CLI, including detailed command refere
 Radio Browser API – free, no key, CORS-friendly internet radio stations.
 Docs: https://api.radio-browser.info/
 Example: https://de1.api.radio-browser.info/json/stations?limit=20&hidebroken=true
+
+For this assignment I chose to use Option A (HttpClient). My reasoning for this is because I like to have things spaced out and in clear chunks to help better understand what im looking at and make it seem less overwhelming when I lose my spot. Along with this, I am a naturally slow coder and with so many moving parts I get tunnel vision when working sometimes, so spacing it out helps me not try and tinker with ten things at once. 

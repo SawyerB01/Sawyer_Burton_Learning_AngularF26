@@ -3,26 +3,18 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { APP_CONFIG } from '../models/app-config';
-import { MockMusic } from './services/mock-music';
-import { Music } from './services/music';
-
 
 export const appConfig: ApplicationConfig = {
-providers: [
-  provideBrowserGlobalErrorListeners(),
-  provideRouter(routes, withComponentInputBinding()),
-  provideHttpClient(),
-
-  {
-    provide: APP_CONFIG,
-    useValue: {
-      apiBaseUrl: 'https://de1.api.radio-browser.info',
-      defaultCategory: 'all'
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideRouter(routes, withComponentInputBinding()),
+    provideHttpClient(),
+    {
+      provide: APP_CONFIG,
+      useValue: {
+        apiBaseUrl: 'https://de1.api.radio-browser.info',
+        defaultCategory: 'all'
+      }
     }
-  },
-
-  { provide: Music, useClass: MockMusic }
-]
-
+  ]
 };
-
