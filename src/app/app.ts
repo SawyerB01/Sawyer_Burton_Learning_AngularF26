@@ -4,6 +4,7 @@ import { MusicList } from './music-list/music-list';
 import { EditGuardService } from './services/edit-guard';
 import { editGuard } from './services/edit.guard';
 import { LoadingService } from './services/loading';
+import { ErrorService } from './services/error';
 
 @Component({
   imports: [RouterOutlet, MusicList],
@@ -14,4 +15,5 @@ import { LoadingService } from './services/loading';
 export class App {
   guardService = inject(EditGuardService);
   loadingService = inject(LoadingService);
+  errorService = inject(ErrorService);
 }

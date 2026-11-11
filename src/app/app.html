@@ -1,4 +1,10 @@
 <router-outlet></router-outlet>
+@if (errorService.message()) {
+  <div class="error-banner">
+    {{ errorService.message() }}
+    <button (click)="errorService.clear()">Dismiss</button>
+  </div>
+}
 <button (click)="guardService.toggle()">
 {{ guardService.guardEnabled() ? 'Unlock Editing' : 'Lock Editing' }}
 </button>
