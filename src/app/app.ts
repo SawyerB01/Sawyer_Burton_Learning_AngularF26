@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { MusicList } from './music-list/music-list';
 import { EditGuardService } from './services/edit-guard';
 import { editGuard } from './services/edit.guard';
+import { LoadingService } from './services/loading';
 
 @Component({
   imports: [RouterOutlet, MusicList],
@@ -12,4 +13,5 @@ import { editGuard } from './services/edit.guard';
 })
 export class App {
   guardService = inject(EditGuardService);
+  loadingService = inject(LoadingService);
 }

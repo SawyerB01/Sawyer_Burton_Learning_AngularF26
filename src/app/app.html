@@ -2,3 +2,6 @@
 <button (click)="guardService.toggle()">
 {{ guardService.guardEnabled() ? 'Unlock Editing' : 'Lock Editing' }}
 </button>
+@if (loadingService.isLoading()) {
+  <span class="loading-indicator">Loading...</span>
+}

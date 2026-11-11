@@ -96,7 +96,7 @@ onSubmit() {
   } else {
     // ADD MODE
     const newItem: musicGlossary = {
-      id: String(Date.now()),
+      id: crypto.randomUUID(),
       name: value.name!,
       category: value.category as any,
       year: value.year!,
