@@ -16,12 +16,11 @@ providers: [
   {
     provide: APP_CONFIG,
     useValue: {
-      apiBaseUrl: 'https://placeholder.example.com/api',
+      apiBaseUrl: 'https://de1.api.radio-browser.info',
       defaultCategory: 'all'
     }
   },
 
-  // the swap
   { provide: Music, useClass: MockMusic }
 ]
 

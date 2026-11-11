@@ -57,7 +57,7 @@ export class MusicForm implements OnInit {
 
     if (currentId) {
       // Edit mode – find the item and pre-fill the form
-      const item = this.musicService.music().find(m => m.id === +currentId);
+      const item = this.musicService.music().find(m=> m.id === currentId)
 
       if (item) {
         this.form.patchValue({
@@ -82,7 +82,7 @@ onSubmit() {
   if (currentId) {
     // EDIT MODE
     const updated: musicGlossary = {
-      id: Number(currentId),
+      id: currentId,
       name: value.name!,
       category: value.category as any,
       year: value.year!,
@@ -96,7 +96,7 @@ onSubmit() {
   } else {
     // ADD MODE
     const newItem: musicGlossary = {
-      id: Date.now(),
+      id: String(Date.now()),
       name: value.name!,
       category: value.category as any,
       year: value.year!,
@@ -116,7 +116,7 @@ constructor() {
     const currentId = this.id();
     if (!currentId) return;
 
-    const item = this.musicService.music().find(m => m.id === Number(currentId));
+    const item = this.musicService.music().find(m => m.id === (currentId));
     if (item) {
       this.form.patchValue({
         name: item.name,

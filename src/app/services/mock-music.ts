@@ -5,7 +5,7 @@ import { musicGlossary } from '../../models/File_01';
 export class MockMusic {
   private readonly _music = signal<musicGlossary[]>([
     {
-      id: 999,
+      id: "",
       name: 'MOCK SONG - This is fake data',
       category: 'metal',
       year: 2099,
@@ -21,7 +21,7 @@ export class MockMusic {
     this._music.update(list => [... list, item]);
   }
 
-  removeMusic(id: number) {
+  removeMusic(id: string) {
     this._music.update(list => list.filter(m => m.id !== id));
   }
   updateMusic(item: musicGlossary) {

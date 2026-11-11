@@ -4,7 +4,7 @@ import { musicGlossary } from '../../models/File_01';
 import { RouterLink } from '@angular/router';
 
 export interface ContentEvent {
-  id: number;
+  id: string;
   action: 'opened' | 'favourited';
 }
 

@@ -57,3 +57,10 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+-------- API USAGE --------
+
+Radio Browser API – free, no key, CORS-friendly internet radio stations.
+Docs: https://api.radio-browser.info/
+Example: https://de1.api.radio-browser.info/json/stations?limit=20&hidebroken=true

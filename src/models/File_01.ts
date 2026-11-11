@@ -1,11 +1,14 @@
 export interface musicGlossary {
-    id: number;
+    id: string;
     name: string;
-    category: "metal" | "jazz" | "rock" | "pop";
-    year: number;
+    category?: string;
+    year?: number;
     description?: string;
-    dateReleased: string;
+    dateReleased?: string;
     img: string;
+    streamUrl?: string;
+    tags?: string;
+    country?: string;
 }
 interface wrapper<K>{
     value: K;

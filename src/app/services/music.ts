@@ -6,7 +6,7 @@ import { Injectable, signal, computed, effect, inject } from '@angular/core';
 export class Music {
     private readonly _music = signal<musicGlossary[]>([
         {
-            id: 1,
+            id: '1',
             name: "Cigarettes After Sex",
             category: "pop",
             year: 2017,
@@ -15,7 +15,7 @@ export class Music {
             img: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Cigarettes_After_Sex_%28album%29.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
           },
         {
-          id: 2,
+          id: '2',
           name: "Monster",
           category: "pop",
           year: 2007,
@@ -23,7 +23,7 @@ export class Music {
           img: "https://upload.wikimedia.org/wikipedia/en/c/c1/Skillet-Monster.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
         },
         {
-          id: 3,
+          id: '3',
           name: "when September ends",
           category: "rock",
           year: 1995,
@@ -31,7 +31,7 @@ export class Music {
             img: "https://upload.wikimedia.org/wikipedia/en/e/ed/Green_Day_-_American_Idiot_album_cover.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
         },
         {
-          id: 4,
+          id: '4',
           name: "Speak for Yourself",
           category: "pop",
           year: 2005,
@@ -39,7 +39,7 @@ export class Music {
           img: "https://upload.wikimedia.org/wikipedia/en/d/d9/Imogen_Heap_-_Speak_For_Yourself.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
         },
         {
-          id: 5,
+          id: '5',
           name: "In love and Death",
           category: "metal",
           year: 2004,
@@ -47,7 +47,7 @@ export class Music {
           img: "https://upload.wikimedia.org/wikipedia/en/9/98/In_Love_and_Death.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original" 
         },
         {
-          id: 6,
+          id: '6',
           name: "No Need To Argue",
           category: "pop",
           year: 2007,
@@ -77,7 +77,7 @@ constructor() {
     });
 }
 
-removeMusic(id: number) {
+removeMusic(id: string) {
     this._music.update(list=>list.filter(item => item.id !== id));
 }
 updateMusic(item: musicGlossary) {
