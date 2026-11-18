@@ -1,4 +1,4 @@
-import { Component, input, inject, OnInit, computed, effect } from '@angular/core';
+import { Component, input, inject, OnInit, computed, effect, viewChild, ElementRef, afterNextRender } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Music } from '../services/music';
@@ -42,6 +42,8 @@ export class MusicForm implements OnInit {
 
   isEditMode = computed(() => !!this.id());
 
+  firstField = viewChild<ElementRef<HTMLInputElement>>('firstField');
+
   form = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2), noWhiteSpaceValidator]],
     category: ['pop', Validators.required],
@@ -51,6 +53,14 @@ export class MusicForm implements OnInit {
     img: ['']
   },
    { validators: yearNotInFuture });
+
+   constructor() {
+
+    
+    afterNextRender(() => {
+      this.firstField()?.nativeElement.focus();
+    });
+  }
 
   ngOnInit() {
     const currentId = this.id();
@@ -111,7 +121,7 @@ onSubmit() {
   }
 }
 
-constructor() {
+const() {
   effect(() => {
     const currentId = this.id();
     if (!currentId) return;
