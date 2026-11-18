@@ -2,6 +2,9 @@ import { Component, input, output, inject} from '@angular/core';
 import { musicGlossary } from '../../models/File_01';
 import { RouterLink } from '@angular/router';
 import {Music} from '../services/music';
+import { TitleCasePipe, UpperCasePipe, SlicePipe } from '@angular/common';
+import { TruncatePipe } from '../pipes/truncate-pipe';
+import { GenreTypePipe } from '../pipes/genre-type-pipe';
 
 export interface ContentEvent {
   id: string;
@@ -9,7 +12,14 @@ export interface ContentEvent {
 }
 
 @Component({
-  imports: [RouterLink],
+  imports: [
+    RouterLink,
+     TitleCasePipe,
+      UpperCasePipe,
+       SlicePipe, 
+       TruncatePipe,
+        GenreTypePipe
+      ],
   selector: 'app-music-list-item',
   styleUrl: './music-list-item.css',
   templateUrl: './music-list-item.html',

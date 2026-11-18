@@ -3,8 +3,10 @@ import { MusicListItem } from '../music-list-item/music-list-item';
 import { ContentEvent } from '../music-list-item/music-list-item';
 import { Music } from '../services/music'; 
 import { APP_CONFIG } from '../../models/app-config';
+import { TitleCasePipe, UpperCasePipe, SlicePipe } from '@angular/common';
+
 @Component({
-  imports: [MusicListItem],
+  imports: [MusicListItem, TitleCasePipe, UpperCasePipe, SlicePipe],
   selector: 'app-music-list',
   styleUrl: './music-list.css',
   templateUrl: './music-list.html',

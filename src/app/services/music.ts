@@ -13,6 +13,7 @@ export class Music {
 
     private readonly _music = signal<musicGlossary[]>([]);
     error = signal<string | null>(null);
+    isLoading = signal(true);
 
     readonly music = this._music.asReadonly();
 
@@ -25,22 +26,6 @@ export class Music {
 
     console.log("Music Service created", this);
   }
-
-    // load() {
-    //   this.http.get<any[]>(`${this.config.apiBaseUrl}/json/stations`, {
-    //     params: {
-    //       limit: 30,
-    //       hidebroken: true,
-
-    //     }
-    //   }).subscribe({
-    //     next: (stations) => {
-    //       const mapped = stations.map(s => this.mapStation(s));
-    //       this._music.set(mapped);
-    //     },
-    //     error: () => this.error.set('Could not load Stations'),
-    //   });
-    // }
       load() {
   this.isLoading.set(true);
   this.error.set(null);
@@ -103,7 +88,5 @@ readonly descriptionCount = computed(() =>
 this.musicWithDescription().length
 );
 readonly hasMusic = computed(() => this._music().length >0);
-
-isLoading = signal(true);
 
 }

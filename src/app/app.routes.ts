@@ -10,22 +10,23 @@ import { Music } from "./services/music";
 
 export const routes: Routes = [
     { path: 'music', component: MusicList },
-    { path: 'music/add', component: MusicForm },
+
+
+    { 
+        path: 'music/add',
+         loadComponent:() => import('./music-form/music-form').then(m => m.MusicForm),
+        canActivate: [editGuard]
+    },
+
+
     {
         path: 'music/edit/:id',
-        component: MusicForm,
+        loadComponent: () => import('./music-form/music-form').then(m => m.MusicForm),
         canActivate: [editGuard]
     },
     {
-        path: 'music/:id',
-        component: MusicDetail,
-        resolve: {
-            music: (route: ActivatedRouteSnapshot) => {
-                const service = inject(Music);
-                const id = route.paramMap.get('id');
-                return service.music().find(item => item.id === id);
-            }
-        }
+path: 'music/:id',
+        loadComponent: () => import('./music-detail/music-detail').then(m => m.MusicDetail)
     },
     { path: '', redirectTo: 'music', pathMatch: 'full'},
 ];

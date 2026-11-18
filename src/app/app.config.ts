@@ -18,7 +18,7 @@ export const appConfig: ApplicationConfig = {
     {
       provide: APP_CONFIG,
       useValue: {
-        apiBaseUrl: 'https://de1.api.radio-browser.info/WRONG',
+        apiBaseUrl: 'https://de1.api.radio-browser.info',
         defaultCategory: 'all'
       }
     }

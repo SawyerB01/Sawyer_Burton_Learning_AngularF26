@@ -1,18 +1,19 @@
 
 <div (click)="onItemClick()" style="cursor: pointer;">
+
 <img [src]="item().img" 
      alt="{{ item().name }} cover" 
      width="120"
      style="margin-bottom: 0.5rem; border-radius: 4px;">
      
-<h2>{{ item().name }}</h2>
+<h2>{{ item().name | titlecase }}</h2>
 <p>Year: {{ item().year }}</p>
-<p>Category: {{ item().category }}</p>
+<p>Category: {{ item().category | genreType | uppercase }}</p>
 <p>Released: {{ item().dateReleased }}</p>
 <footer>Current date: September 30th, 2026.</footer>
 
 @if (item().description) {
-  <p>Description: {{ item().description }}</p>
+  <p>Description: {{ item().description | truncate:80 }}</p>
 } @else {
   <p>This item has no description.</p>
 }
