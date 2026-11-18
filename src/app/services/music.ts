@@ -24,8 +24,13 @@ export class Music {
       console.log("Current number of songs", this.music().length);
     });
 
+
+
     console.log("Music Service created", this);
   }
+      getById(id: string): musicGlossary | undefined {
+      return this._music().find(item => item.id === id);
+    }
       load() {
   this.isLoading.set(true);
   this.error.set(null);

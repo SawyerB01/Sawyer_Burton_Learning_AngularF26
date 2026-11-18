@@ -75,7 +75,7 @@ styles-NV5MQSSY.css | styles        | 193 bytes |               193 bytes
                     | Initial total |  45.48 kB
 
 
-After lazy loading
+After lazy loading:
 chunk-LPD64VEN.js   | -             | 262.50 kB |                71.72 kB
 main-4B6O7HUA.js    | main          |   7.56 kB |                 2.65 kB
 chunk-YBUNKZAO.js   | -             |   1.56 kB |               699 bytes
